@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: #fff;
+  }
+
+  .og {
+    width: 1200px;
+    height: 630px;
+    background: #FFFFFF;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Red top bar */
+  .og::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: #E30003;
+    z-index: 10;
+  }
+
+  /* Dot grid — left panel only */
+  .og::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 560px; height: 630px;
+    background-image: radial-gradient(circle, rgba(17,24,39,0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Left panel ── */
+  .left {
+    width: 560px;
+    flex-shrink: 0;
+    padding: 52px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Logo: transparent background — displays cleanly on white */
+  .logo-img {
+    height: 44px;
+    width: auto;
+    display: block;
+    margin-bottom: 28px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E30003;
+    background: #FEF2F2;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+  }
+
+  .headline {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #111827;
+    margin-bottom: 32px;
+  }
+
+  .headline .red { color: #E30003; }
+
+  .metrics {
+    display: flex;
+    gap: 10px;
+  }
+
+  .pill {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: #F3F4F6;
+    font-size: 12px;
+    font-weight: 600;
+    color: #374151;
+    white-space: nowrap;
+  }
+
+  .pill.accent {
+    background: #E30003;
+    color: #FFFFFF;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #E30003;
+    flex-shrink: 0;
+  }
+
+  .pill.accent .dot { background: rgba(255,255,255,0.6); }
+
+  .domain {
+    font-size: 13px;
+    color: #9CA3AF;
+    letter-spacing: 0.03em;
+  }
+
+  .domain::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: #E30003;
+    margin-top: 8px;
+    border-radius: 1px;
+  }
+
+  /* ── Right panel ── */
+  .right {
+    flex: 1;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;      /* vertical centre */
+    justify-content: center;  /* horizontal centre */
+    padding: 32px 28px;
+  }
+
+  .right img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(17,24,39,0.12);
+  }
+</style>
+</head>
+<body>
+<div class="og">
+
+  <!-- Left panel -->
+  <div class="left">
+    <div>
+      <!-- Actual logo — black bg removed with mix-blend-mode: darken -->
+      <img
+        class="logo-img"
+        src="assets/images/SINERA_REVOPS_polished.png"
+        alt="Sinera RevOps"
+      >
+
+      <div class="eyebrow">Industrial B2B · RevOps</div>
+
+      <div class="headline">
+        Build a<br>
+        Predictable<br>
+        Pipeline in<br>
+        <span class="red">30 Days</span>
+      </div>
+
+      <div class="metrics">
+        <div class="pill"><span class="dot"></span>50+ clients</div>
+        <div class="pill"><span class="dot"></span>3× avg. ROI</div>
+        <div class="pill accent"><span class="dot"></span>30-day setup</div>
+      </div>
+    </div>
+
+    <div class="domain">sinerarevops.com</div>
+  </div>
+
+  <!-- Right panel: pipeline dashboard, centred -->
+  <div class="right">
+    <img src="assets/images/Pipeline_Engine2.png" alt="Pipeline Dashboard">
+  </div>
+
+</div>
+</body>
+</html>
