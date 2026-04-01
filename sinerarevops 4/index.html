@@ -445,13 +445,10 @@
             gap: 32px;
         }
         .footer-logo-wrap {
-            background-color: #111827;
-            padding: 10px 14px;
-            border-radius: 6px;
             display: inline-block;
             margin-bottom: 12px;
         }
-        .footer-logo-wrap img { height: 24px; width: auto; display: block; }
+        .footer-logo-wrap img { height: 32px; width: auto; display: block; }
         .footer-subtitle { font-size: 13px; color: #9CA3AF; }
         .footer-link { color: #9CA3AF; text-decoration: none; transition: color 0.2s ease; }
         .footer-link:hover { color: #E30003; }
@@ -486,15 +483,40 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            h1 { font-size: 36px; }
-            h2 { font-size: 28px; }
-            .hero-inner { padding: 56px 20px 0; }
-            .section-white, .section-gray, .section-dark { padding: 72px 20px; }
+            /* Typography */
+            h1 { font-size: 34px; }
+            h2 { font-size: 26px; }
+            h3 { font-size: 18px; }
+
+            /* Nav */
+            .nav-inner { padding: 0 20px; height: 60px; }
+            .nav-logo img { height: 30px; }
+            .nav-cta { padding: 8px 14px; font-size: 13px; }
+
+            /* Hero */
+            .hero-inner { padding: 40px 20px 0; }
+            .hero-subtitle { font-size: 16px; }
+            .cta-buttons { flex-direction: column; align-items: stretch; }
+            .btn-primary, .btn-secondary { justify-content: center; width: 100%; }
+
+            /* Sections */
+            .section-white, .section-gray, .section-dark { padding: 56px 20px; }
             .container, .container-sm { padding: 0 20px; }
-            .nav-inner { padding: 0 20px; }
-            .proof-item { padding: 8px 16px; font-size: 12px; }
-            .proof-item + .proof-item { border-left: none; border-top: 1px solid #E5E7EB; }
-            .proof-strip { flex-direction: column; gap: 0; margin-bottom: 48px; }
+
+            /* Cards — single column */
+            .cards-grid { grid-template-columns: 1fr; }
+
+            /* Steps — single column */
+            .steps-grid { grid-template-columns: 1fr; }
+
+            /* Footer — stack columns */
+            .footer-content { flex-direction: column; gap: 24px; }
+
+            /* Final CTA button */
+            .btn-final { width: 100%; justify-content: center; }
+
+            /* Section head spacing */
+            .section-head { margin-bottom: 36px; }
         }
     </style>
 </head>
@@ -506,7 +528,7 @@
             <a href="/" class="nav-logo">
                 <img src="/assets/images/SINERA_REVOPS_polished.png" alt="Sinera RevOps">
             </a>
-            <a href="https://calendly.com/sinerarevops" target="_blank" rel="noopener noreferrer" class="nav-cta">
+            <a href="https://outlook.office.com/bookwithme/user/56a6b02253c942c9be2dc6efc834fbb4@sinerasaleslab.co.uk/meetingtype/o_gZhM7TV0yw2AciNgvijA2?anonymous" target="_blank" rel="noopener noreferrer" class="nav-cta">
                 <i data-lucide="calendar" style="width:14px;height:14px;"></i>
                 Book a Call
             </a>
@@ -523,7 +545,7 @@
                     We design and deploy a Lead Engine for industrial B2B companies that generates qualified meetings and measurable pipeline—without relying on field sales.
                 </p>
                 <div class="cta-buttons">
-                    <a href="https://calendly.com/sinerarevops" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                    <a href="https://outlook.office.com/bookwithme/user/56a6b02253c942c9be2dc6efc834fbb4@sinerasaleslab.co.uk/meetingtype/o_gZhM7TV0yw2AciNgvijA2?anonymous" target="_blank" rel="noopener noreferrer" class="btn-primary">
                         <i data-lucide="calendar" style="width:16px;height:16px;"></i>
                         Book a Call
                     </a>
@@ -532,11 +554,7 @@
                         <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
                     </a>
                 </div>
-                <div class="proof-strip">
-                    <div class="proof-item"><span class="proof-dot"></span>50+ industrial clients</div>
-                    <div class="proof-item"><span class="proof-dot"></span>3× avg. ROI</div>
-                    <div class="proof-item"><span class="proof-dot"></span>30-day setup</div>
-                </div>
+
             </div>
             <div class="hero-visual-wrap">
                 <img src="/assets/images/Pipeline_Engine2.png" alt="The Lead Engine — Pipeline Visualization">
@@ -736,7 +754,7 @@
             <span class="eyebrow" style="background-color:rgba(227,0,3,0.15);color:#FCA5A5;">Get Started</span>
             <h2>Build Your Pipeline System</h2>
             <p>If you want a structured, measurable way to generate pipeline, this is the starting point.</p>
-            <a href="https://calendly.com/sinerarevops" target="_blank" rel="noopener noreferrer" class="btn-final">
+            <a href="https://outlook.office.com/bookwithme/user/56a6b02253c942c9be2dc6efc834fbb4@sinerasaleslab.co.uk/meetingtype/o_gZhM7TV0yw2AciNgvijA2?anonymous" target="_blank" rel="noopener noreferrer" class="btn-final">
                 <i data-lucide="calendar" style="width:17px;height:17px;"></i>
                 Book a Call
             </a>
@@ -748,10 +766,13 @@
         <div class="footer-content">
             <div>
                 <div class="footer-logo-wrap">
-                    <img src="/assets/images/SINERA_REVOPS_dark_bg.png" alt="Sinera RevOps">
+                    <img src="/assets/images/SINERA_REVOPS_polished.png" alt="Sinera RevOps">
                 </div>
                 <div class="footer-subtitle">
                     Built on research from&nbsp;<a href="https://sinerasaleslab.com" target="_blank" rel="noopener noreferrer" class="footer-link" style="text-decoration:underline;text-underline-offset:3px;">Sinera Sales Lab</a>
+                </div>
+                <div class="footer-subtitle" style="margin-top:6px;">
+                    Birmingham, UK · Serving industrial B2B across Europe, including Türkiye
                 </div>
             </div>
             <div>
